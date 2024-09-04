@@ -7,7 +7,7 @@ const scaleI = textareaDiv.querySelector('#scale-indicator');
 let currentScale = "c";
 const modDd = document.querySelector('#mod-dd');
 const strDd = document.querySelector('#str-dd');
-let typeMode = "chords";
+let typeMode = "text";
 
 let keyboardControl = "chartWriter";
 
