@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chart Writer | Easy Chart Writing</title>
+    <script src="Logic.js" defer></script>
+    <link rel="stylesheet" href="Style2.css" />
+  </head>
+  <body>
+    <div id="textarea1">
+      <textarea inputmode="none" name="Chart" id="chartBody" cols="30" rows="10"></textarea>
+      <div id="options-menu">
+        <button id="ctc">
+          <span  style="font-size: .875em; margin-right: .125em; position: relative; top: -.25em; left: -.125em">
+            📄<span style="position: absolute; top: .25em; left: .25em">📄</span>
+          </span>
+        </button>
+        <div class="d-none" id="dw">
+          <input id="filename" placeholder="Specify a filename..." />
+          <button id="download" >
+            <img src="downloadLogo.jpg" alt="Save">
+          </button>
+        </div>
+        <span id="alert-ctc"></span>
+        <span id="scale-indicator">C/Am</span>
+      </div>
+    </div>
+
+    <div id="keyboard-main">
+      <!-- C Scale Keyboard -->
+      <div id="keyboard-c" class="keyboard">
+        <!-- Basses Line -->
+        <div class="basses-line">
+          <div class="btn-box">
+            <button class="bass-1">/C</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-2">/D</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-3">/E</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-4">/F</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-5">/F#</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-6">/G</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-7">/Ab</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-8">/A</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-9">/Bb</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-10">/B</button>
+          </div>
+        </div>
+        <!-- black  line -->
+        <div class="black-line">
+          <div class="bt">
+            <button class="wcb tut-Cs">A/C#</button>
+          </div>
+          <div class="bt">
+            <button class="wcb tut-Eb">Eb</button>
+          </div>
+          <div class="fs-margin bt">
+            <button class="wcb v2Note tut-Fs">F#ø</button>
+          </div>
+          <div class="bt">
+            <button class="wcb tut-Ab">E/Ab</button>
+          </div>
+          <div class="bt">
+            <button class="wcb tut-Bb">Bb</button>
+          </div>
+        </div>
+        <!-- Scale line -->
+        <div class="white-line">
+          <div class="wt">
+            <button class="tut-C">C</button>
+          </div>
+          <div class="wt">
+            <button class="v2Note tut-D">Dm</button>
+          </div>
+          <div class="wt">
+            <button class="v2Note border-rn tut-E">Em</button>
+          </div>
+          <div class="sep-coulmn"></div>
+          <div class="wt">
+            <button class="tut-F border-ln">F</button>
+          </div>
+          <div class="wt">
+            <button class="tut-G">G</button>
+          </div>
+          <div class="wt">
+            <button class="v2Note tut-A">Am</button>
+          </div>
+          <div class="wt">
+            <button class="v2Note tut-B">Bø</button>
+          </div>
+        </div>
+      </div>
+      <!-- C# Scale Keyboard -->
+      <div id="keyboard-cs" class="keyboard d-none">
+        <!-- Basses Line -->
+        <div class="basses-line">
+          <div class="btn-box">
+            <button class="bass-1">/C</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-2">/C#</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-3">/Eb</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-4">/F</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-5">/F#</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-6">/G</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-7">/Ab</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-8">/A</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-9">/Bb</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-10">/B</button>
+          </div>
+        </div>
+        <!-- black  line -->
+        <div class="black-line">
+          <div class="bt">
+            <button class="tut-Cs">C#</button>
+          </div>
+          <div class="bt">
+            <button class="v2Note tut-Eb">Ebm</button>
+          </div>
+          <div class="fs-margin bt">
+            <button class="tut-Fs">F#</button>
+          </div>
+          <div class="bt">
+            <button class="tut-Ab">Ab</button>
+          </div>
+          <div class="bt">
+            <button class="v2Note tut-Bb">Bbm</button>
+          </div>
+        </div>
+        <!-- Scale line -->
+        <div class="white-line">
+          <div class="wt">
+            <button class="v2Note tut-C">Cø</button>
+          </div>
+          <div class="wt">
+            <button class="wcw tut-D">Bb/D</button>
+          </div>
+          <div class="wt">
+            <button class="wcw border-rn tut-E">E</button>
+          </div>
+          <div class="sep-coulmn"></div>
+          <div class="wt">
+            <button class="v2Note tut-F border-ln">Fm</button>
+          </div>
+          <div class="wt">
+            <button class="wcw v2Note tut-G">Gø</button>
+          </div>
+          <div class="wt">
+            <button class="wcw tut-A">F/A</button>
+          </div>
+          <div class="wt">
+            <button class="wcw tut-B">B</button>
+          </div>
+        </div>
+      </div>
+      <!-- D Scale Keyboard -->
+      <div id="keyboard-d" class="keyboard d-none">
+        <!-- Basses Line -->
+        <div class="basses-line">
+          <div class="btn-box">
+            <button class="bass-1">/C</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-2">/C#</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-3">/D</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-4">/E</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-5">/F#</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-6">/G</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-7">/Ab</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-8">/A</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-9">/Bb</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-10">/B</button>
+          </div>
+        </div>
+        <!-- black  line -->
+        <div class="black-line">
+          <div class="bt">
+            <button class="v2Note tut-Cs">C#ø</button>
+          </div>
+          <div class="bt">
+            <button class="wcb tut-Eb">B/Eb</button>
+          </div>
+          <div class="fs-margin bt">
+            <button class="v2Note tut-Fs">F#m</button>
+          </div>
+          <div class="bt">
+            <button class="wcb v2Note wc tut-Ab">Abø</button>
+          </div>
+          <div class="bt">
+            <button class="txt-sm wcb tut-Bb">F#/Bb</button>
+          </div>
+        </div>
+        <!-- Scale line -->
+        <div class="white-line">
+          <div class="wt">
+            <button class="wcw tut-C">C</button>
+          </div>
+          <div class="wt">
+            <button class="tut-D">D</button>
+          </div>
+          <div class="wt">
+            <button class="v2Note border-rn tut-E">Em</button>
+          </div>
+          <div class="sep-coulmn"></div>
+          <div class="wt">
+            <button class="wcw tut-F border-ln">F</button>
+          </div>
+          <div class="wt">
+            <button class="tut-G">G</button>
+          </div>
+          <div class="wt">
+            <button class="tut-A">A</button>
+          </div>
+          <div class="wt">
+            <button class="v2Note tut-B">Bm</button>
+          </div>
+        </div>
+      </div>
+      <!-- Eb Scale Keyboard -->
+      <div id="keyboard-eb" class="keyboard d-none">
+        <!-- Basses Line -->
+        <div class="basses-line">
+          <div class="btn-box">
+            <button class="bass-1">/C</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-2">/C#</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-3">/D</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-4">/Eb</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-5">/F</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-6">/G</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-7">/Ab</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-8">/A</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-9">/Bb</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-10">/B</button>
+          </div>
+        </div>
+        <!-- black  line -->
+        <div class="black-line">
+          <div class="bt">
+            <button class="wcb tut-Cs">C#</button>
+          </div>
+          <div class="bt">
+            <button class="tut-Eb">Eb</button>
+          </div>
+          <div class="fs-margin bt">
+            <button class="wcb tut-Fs">F#</button>
+          </div>
+          <div class="bt">
+            <button class="tut-Ab">Ab</button>
+          </div>
+          <div class="bt">
+            <button class="tut-Bb">Bb</button>
+          </div>
+        </div>
+        <!-- Scale line -->
+        <div class="white-line">
+          <div class="wt">
+            <button class="v2Note tut-C">Cm</button>
+          </div>
+          <div class="wt">
+            <button class="v2Note tut-D">Dø</button>
+          </div>
+          <div class="wt">
+            <button class="wcw border-rn tut-E">C/E</button>
+          </div>
+          <div class="sep-coulmn"></div>
+          <div class="wt">
+            <button class="v2Note border-ln tut-F">Fm</button>
+          </div>
+          <div class="wt">
+            <button class="v2Note tut-G">Gm</button>
+          </div>
+          <div class="wt">
+            <button class="wcw v2Note tut-A">Aø</button>
+          </div>
+          <div class="wt">
+            <button class="wcw tut-B">G/B</button>
+          </div>
+        </div>
+      </div>
+      <!-- E Scale Keyboard -->
+      <div id="keyboard-e" class="keyboard d-none">
+        <!-- Basses Line -->
+        <div class="basses-line">
+          <div class="btn-box">
+            <button class="bass-1">/C</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-2">/C#</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-3">/D</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-4">/Eb</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-5">/E</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-6">/F#</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-7">/Ab</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-8">/A</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-9">/Bb</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-10">/B</button>
+          </div>
+        </div>
+        <!-- black  line -->
+        <div class="black-line">
+          <div class="bt">
+            <button class="v2Note tut-Cs">C#m</button>
+          </div>
+          <div class="bt">
+            <button class="v2Note tut-Eb">Ebø</button>
+          </div>
+          <div class="fs-margin bt">
+            <button class="v2Note tut-Fs">F#m</button>
+          </div>
+          <div class="bt">
+            <button class="v2Note tut-Ab">G#m</button>
+          </div>
+          <div class="bt">
+            <button class="wcb v2Note tut-Bb">Bbø</button>
+          </div>
+        </div>
+        <!-- Scale line -->
+        <div class="white-line">
+          <div class="wt">
+            <button class="wcw tut-C">Ab/C</button>
+          </div>
+          <div class="wt">
+            <button class="wcw tut-D">D</button>
+          </div>
+          <div class="wt">
+            <button class="border-rn tut-E">E</button>
+          </div>
+          <div class="sep-coulmn"></div>
+          <div class="wt">
+            <button class="wcw border-ln tut-F">C#/F</button>
+          </div>
+          <div class="wt">
+            <button class="wcw tut-G">G</button>
+          </div>
+          <div class="wt">
+            <button class="tut-A">A</button>
+          </div>
+          <div class="wt">
+            <button class="tut-B">B</button>
+          </div>
+        </div>
+      </div>
+      <!-- F Scale Keyboard -->
+      <div id="keyboard-f" class="keyboard d-none">
+        <!-- Basses Line -->
+        <div class="basses-line">
+          <div class="btn-box">
+            <button class="bass-1">/C</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-2">/C#</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-3">/D</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-4">/Eb</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-5">/E</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-6">/F</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-7">/G</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-8">/A</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-9">/Bb</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-10">/B</button>
+          </div>
+        </div>
+        <!-- black  line -->
+        <div class="black-line">
+          <div class="bt">
+            <button class="wcb tut-Cs">A/C#</button>
+          </div>
+          <div class="bt">
+            <button class="wcb tut-Eb">Eb</button>
+          </div>
+          <div class="fs-margin bt">
+            <button class="wcb tut-Fs">D/F#</button>
+          </div>
+          <div class="bt">
+            <button class="wcb tut-Ab">Ab</button>
+          </div>
+          <div class="bt">
+            <button class="tut-Bb">Bb</button>
+          </div>
+        </div>
+        <!-- Scale line -->
+        <div class="white-line">
+          <div class="wt">
+            <button class="tut-C">C</button>
+          </div>
+          <div class="wt">
+            <button class="v2Note tut-D">Dm</button>
+          </div>
+          <div class="wt">
+            <button class="v2Note border-rn tut-E">Eø</button>
+          </div>
+          <div class="sep-coulmn"></div>
+          <div class="wt">
+            <button class="border-ln tut-F">F</button>
+          </div>
+          <div class="wt">
+            <button class="v2Note tut-G">Gm</button>
+          </div>
+          <div class="wt">
+            <button class="v2Note tut-A">Am</button>
+          </div>
+          <div class="wt">
+            <button class="wcw v2Note tut-B">Bø</button>
+          </div>
+        </div>
+      </div>
+      <!-- F# Scale Keyboard -->
+      <div id="keyboard-fs" class="keyboard d-none">
+        <!-- Basses Line -->
+        <div class="basses-line">
+          <div class="btn-box">
+            <button class="bass-1">/C</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-2">/C#</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-3">/D</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-4">/Eb</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-5">/E</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-6">/F</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-7">/F#</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-8">/Ab</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-9">/Bb</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-10">/B</button>
+          </div>
+        </div>
+        <!-- black  line -->
+        <div class="black-line">
+          <div class="bt">
+            <button class="tut-Cs">C#</button>
+          </div>
+          <div class="bt">
+            <button class="v2Note tut-Eb">Ebm</button>
+          </div>
+          <div class="fs-margin bt">
+            <button class="tut-Fs">F#</button>
+          </div>
+          <div class="bt">
+            <button class="v2Note tut-Ab">G#m</button>
+          </div>
+          <div class="bt">
+            <button class="v2Note tut-Bb">Bbm</button>
+          </div>
+        </div>
+        <!-- Scale line -->
+        <div class="white-line">
+          <div class="wt">
+            <button class="wcw v2Note tut-C">Cø</button>
+          </div>
+          <div class="wt">
+            <button class="wcw tut-D">Bb/D</button>
+          </div>
+          <div class="wt">
+            <button class="wcw border-rn tut-E">E</button>
+          </div>
+          <div class="sep-coulmn"></div>
+          <div class="wt">
+            <button class="v2Note border-ln tut-F">Fø</button>
+          </div>
+          <div class="wt">
+            <button class="wcw tut-G">Eb/G</button>
+          </div>
+          <div class="wt">
+            <button class="wcw tut-A">A</button>
+          </div>
+          <div class="wt">
+            <button class="tut-B">B</button>
+          </div>
+        </div>
+      </div>
+      <!-- G Scale Keyboard -->
+      <div id="keyboard-g" class="keyboard d-none">
+        <!-- Basses Line -->
+        <div class="basses-line">
+          <div class="btn-box">
+            <button class="bass-1">/C</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-2">/C#</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-3">/D</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-4">/Eb</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-5">/E</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-6">/F</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-7">/F#</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-8">/G</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-9">/A</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-10">/B</button>
+          </div>
+        </div>
+        <!-- black  line -->
+        <div class="black-line">
+          <div class="bt">
+            <button class="wcb v2Note tut-Cs">C#ø</button>
+          </div>
+          <div class="bt">
+            <button class="wcb tut-Eb">B/Eb</button>
+          </div>
+          <div class="fs-margin bt">
+            <button class="v2Note tut-Fs">F#ø</button>
+          </div>
+          <div class="bt">
+            <button class="wcb tut-Ab">E/Ab</button>
+          </div>
+          <div class="bt">
+            <button class="wcb tut-Bb">Bb</button>
+          </div>
+        </div>
+        <!-- Scale line -->
+        <div class="white-line">
+          <div class="wt">
+            <button class="tut-C">C</button>
+          </div>
+          <div class="wt">
+            <button class="tut-D">D</button>
+          </div>
+          <div class="wt">
+            <button class="v2Note border-rn tut-E">Em</button>
+          </div>
+          <div class="sep-coulmn"></div>
+          <div class="wt">
+            <button class="wcw border-ln tut-F">F</button>
+          </div>
+          <div class="wt">
+            <button class="tut-G">G</button>
+          </div>
+          <div class="wt">
+            <button class="v2Note tut-A">Am</button>
+          </div>
+          <div class="wt">
+            <button class="v2Note tut-B">Bm</button>
+          </div>
+        </div>
+      </div>
+      <!-- Ab Scale Keyboard -->
+      <div id="keyboard-ab" class="keyboard d-none">
+        <!-- Basses Line -->
+        <div class="basses-line">
+          <div class="btn-box">
+            <button class="bass-1">/C</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-2">/C#</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-3">/D</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-4">/Eb</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-5">/E</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-6">/F</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-7">/F#</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-8">/G</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-9">/Ab</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-10">/Bb</button>
+          </div>
+        </div>
+        <!-- black  line -->
+        <div class="black-line">
+          <div class="bt">
+            <button class="tut-Cs">C#</button>
+          </div>
+          <div class="bt">
+            <button class="tut-Eb">Eb</button>
+          </div>
+          <div class="fs-margin bt">
+            <button class="wcb tut-Fs">F#</button>
+          </div>
+          <div class="bt">
+            <button class="tut-Ab">Ab</button>
+          </div>
+          <div class="bt">
+            <button class="v2Note tut-Bb">Bbm</button>
+          </div>
+        </div>
+        <!-- Scale line -->
+        <div class="white-line">
+          <div class="wt">
+            <button class="v2Note tut-C">Cm</button>
+          </div>
+          <div class="wt">
+            <button class="wcw v2Note tut-D">Dø</button>
+          </div>
+          <div class="wt">
+            <button class="wcw border-rn tut-E">C/E</button>
+          </div>
+          <div class="sep-coulmn"></div>
+          <div class="wt">
+            <button class="v2Note border-ln tut-F">Fm</button>
+          </div>
+          <div class="wt">
+            <button class="v2Note tut-G">Gø</button>
+          </div>
+          <div class="wt">
+            <button class="wcw tut-A">F/A</button>
+          </div>
+          <div class="wt">
+            <button class="wcw tut-B">B</button>
+          </div>
+        </div>
+      </div>
+      <!-- A Scale Keyboard -->
+      <div id="keyboard-a" class="keyboard d-none">
+        <!-- Basses Line -->
+        <div class="basses-line">
+          <div class="btn-box">
+            <button class="bass-1">/C#</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-2">/D</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-3">/Eb</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-4">/E</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-5">/F</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-6">/F#</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-7">/G</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-8">/Ab</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-9">/A</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-10">/B</button>
+          </div>
+        </div>
+        <!-- black  line -->
+        <div class="black-line">
+          <div class="bt">
+            <button class="v2Note tut-Cs">C#m</button>
+          </div>
+          <div class="bt">
+            <button class="wcb v2Note tut-Eb">Ebø</button>
+          </div>
+          <div class="fs-margin bt">
+            <button class="v2Note tut-Fs">F#m</button>
+          </div>
+          <div class="bt">
+            <button class="v2Note tut-Ab">Abø</button>
+          </div>
+          <div class="bt">
+            <button class="wcb tut-Bb">F#/Bb</button>
+          </div>
+        </div>
+        <!-- White line -->
+        <div class="white-line">
+          <div class="wt">
+            <button class="wcw tut-C">C</button>
+          </div>
+          <div class="wt">
+            <button class="tut-D">D</button>
+          </div>
+          <div class="wt">
+            <button class="border-rn tut-E">E</button>
+          </div>
+          <div class="sep-coulmn"></div>
+          <div class="wt">
+            <button class="wcw border-ln tut-F">C#/F</button>
+          </div>
+          <div class="wt">
+            <button class="wcw tut-G">G</button>
+          </div>
+          <div class="wt">
+            <button class="tut-A">A</button>
+          </div>
+          <div class="wt">
+            <button class="v2Note tut-B">Bm</button>
+          </div>
+        </div>
+      </div>
+      <!-- Bb Scale Keyboard -->
+      <div id="keyboard-bb" class="keyboard d-none">
+        <!-- Basses Line -->
+        <div class="basses-line">
+          <div class="btn-box">
+            <button class="bass-1">/C</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-2">/D</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-3">/Eb</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-4">/E</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-5">/F</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-6">/F#</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-7">/G</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-8">/Ab</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-9">/A</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-10">/Bb</button>
+          </div>
+        </div>
+        <!-- black  line -->
+        <div class="black-line">
+          <div class="bt">
+            <button class="wcb tut-Cs">C#</button>
+          </div>
+          <div class="bt">
+            <button class="tut-Eb">Eb</button>
+          </div>
+          <div class="fs-margin bt">
+            <button class="wcb tut-Fs">D/F#</button>
+          </div>
+          <div class="bt">
+            <button class="wcb tut-Ab">Ab</button>
+          </div>
+          <div class="bt">
+            <button class="tut-Bb">Bb</button>
+          </div>
+        </div>
+        <!-- Scale line -->
+        <div class="white-line">
+          <div class="wt">
+            <button class="v2Note tut-C">Cm</button>
+          </div>
+          <div class="wt">
+            <button class="v2Note tut-D">Dm</button>
+          </div>
+          <div class="wt">
+            <button class="wcw v2Note border-rn tut-E">Eø</button>
+          </div>
+          <div class="sep-coulmn"></div>
+          <div class="wt">
+            <button class="border-ln tut-F">F</button>
+          </div>
+          <div class="wt">
+            <button class="v2Note tut-G">Gm</button>
+          </div>
+          <div class="wt">
+            <button class="v2Note tut-A">Aø</button>
+          </div>
+          <div class="wt">
+            <button class="wcw tut-B">G/B</button>
+          </div>
+        </div>
+      </div>
+      <!-- B Scale Keyboard -->
+      <div id="keyboard-b" class="keyboard d-none">
+        <!-- Basses Line -->
+        <div class="basses-line">
+          <div class="btn-box">
+            <button class="bass-1">/C#</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-2">/Eb</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-3">/E</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-4">/F</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-5">/F#</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-6">/G</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-7">/Ab</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-8">/A</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-9">/Bb</button>
+          </div>
+          <div class="btn-box">
+            <button class="bass-10">/B</button>
+          </div>
+        </div>
+        <!-- black  line -->
+        <div class="black-line">
+          <div class="bt">
+            <button class="v2Note tut-Cs">C#m</button>
+          </div>
+          <div class="bt">
+            <button class="v2Note tut-Eb">Ebm</button>
+          </div>
+          <div class="fs-margin bt">
+            <button class="tut-Fs">F#</button>
+          </div>
+          <div class="bt">
+            <button class="v2Note tut-Ab">G#m</button>
+          </div>
+          <div class="bt">
+            <button class="v2Note tut-Bb">Bbø</button>
+          </div>
+        </div>
+        <!-- Scale line -->
+        <div class="white-line">
+          <div class="wt">
+            <button class="wcw tut-C">Ab/C</button>
+          </div>
+          <div class="wt">
+            <button class="wcw tut-D">D</button>
+          </div>
+          <div class="wt">
+            <button class="border-rn tut-E">E</button>
+          </div>
+          <div class="sep-coulmn"></div>
+          <div class="wt">
+            <button class="wcw v2Note border-ln tut-F">Fø</button>
+          </div>
+          <div class="wt">
+            <button class="wcw tut-G">Eb/G</button>
+          </div>
+          <div class="wt">
+            <button class="wcw tut-A">A</button>
+          </div>
+          <div class="wt">
+            <button class="tut-B">B</button>
+          </div>
+        </div>
+      </div>
+      <!-- Splits Line -->
+      <div id="splits-line">
+        <div class="btn-box">
+          <button id="split-3">'''</button>
+        </div>
+        <div class="btn-box">
+          <button id="split-2">''</button>
+        </div>
+        <div class="btn-box">
+          <button id="split-1">'</button>
+        </div>
+        <div class="btn-box">
+          <button id="split-space">___</button>
+        </div>
+        <div class="btn-box">
+          <button id="split-backspace">&#9003;</button>
+        </div>
+        <div class="btn-box">
+          <button id="split-new-line">&#9166;</button>
+        </div>
+        <div class="btn-box">
+          <button id="split-bar">|&nbsp;X&nbsp;|</button>
+        </div>
+      </div>
+      <!-- Extension Chords Line -->
+      <div id="ext-line">
+        <div class="btn-box">
+          <button id="ext-m7b5">ø</button>
+        </div>
+        <div class="btn-box">
+          <button id="ext-maj7">△7</button>
+        </div>
+        <div class="btn-box">
+          <button id="ext-sus4">s4</button>
+        </div>
+        <div class="btn-box">
+          <button id="ext-sus9">s9</button>
+        </div>
+        <div class="btn-box">
+          <button id="ext-7">7</button>
+        </div>
+        <div class="btn-box">
+          <button id="ext-m">m</button>
+        </div>
+        <div class="btn-box">
+          <button id="ext-b">b</button>
+        </div>
+        <div class="btn-box">
+          <button id="ext-s">#</button>
+        </div>
+        <div class="btn-box">
+          <button id="ext-5">5</button>
+        </div>
+        <div class="btn-box">
+          <button id="ext-6">6</button>
+        </div>
+        <div class="btn-box">
+          <button id="ext-aug">aug</button>
+        </div>
+        <div class="btn-box">
+          <button id="ext-dim">dim</button>
+        </div>
+      </div>
+      <!-- symbols  Line -->
+      <div id="symbols-line">
+        <div class="btn-box">
+          <!-- rlb = repeat last bar -->
+          <button class="repeats-color" id="rlb">%</button>
+        </div>
+        <div class="btn-box">
+          <button class="repeats-color" id="rep-1">1.</button>
+        </div>
+        <div class="btn-box">
+          <button class="repeats-color" id="rep-2">2.</button>
+        </div>
+        <div class="btn-box">
+          <button class="repeats-color" id="sym-x4">X4</button>
+        </div>
+        <div class="btn-box">
+          <button class="repeats-color" id="sym-x3">X3</button>
+        </div>
+        <div class="btn-box">
+          <button class="repeats-color" id="sym-x2">X2</button>
+        </div>
+        <div class="btn-box">
+          <button class="weights-color" id="sym-2-4">2/4</button>
+        </div>
+        <div class="btn-box">
+          <button class="weights-color" id="sym-3-4">3/4</button>
+        </div>
+        <div class="btn-box">
+          <button class="weights-color" id="sym-4-4">4/4</button>
+        </div>
+        <div class="btn-box">
+          <button class="weights-color" id="sym-5-4">5/4</button>
+        </div>
+        <div class="btn-box">
+          <button class="weights-color" id="sym-3-8">3/8</button>
+        </div>
+        <div class="btn-box">
+          <button class="weights-color" id="sym-6-8">6/8</button>
+        </div>
+      </div>
+    </div>
+    <!-- Modulation and structure -->
+    <div id="mod-str-line">
+      <!-- Modulation Box -->
+      <div id="mod-box" class="dd-oe">
+        <div id="mod-dd" class="d-none">
+          <div class="mod-ddl">
+            <button class="mod-btn" id="modBtn-c">C/Am</button>
+            <button class="mod-btn" id="modBtn-cs">C#/Bbm</button>
+            <button class="mod-btn" id="modBtn-d">D/Bm</button>
+            <button class="mod-btn" id="modBtn-eb">Eb/Cm</button>
+          </div>
+          <div class="mod-ddl">
+            <button class="mod-btn" id="modBtn-e">E/C#m</button>
+            <button class="mod-btn" id="modBtn-f">F/Dm</button>
+            <button class="mod-btn" id="modBtn-fs">F#/Ebm</button>
+            <button class="mod-btn" id="modBtn-g">G/Em</button>
+          </div>
+          <div class="mod-ddl">
+            <button class="mod-btn" id="modBtn-ab">Ab/Fm</button>
+            <button class="mod-btn" id="modBtn-a">A/F#m</button>
+            <button class="mod-btn" id="modBtn-bb">Bb/Gm</button>
+            <button class="mod-btn" id="modBtn-b">B/G#m</button>
+          </div>
+        </div>
+        <button id="open-mod-dd-btn">Modulation</button>
+      </div>
+      <!-- Structure box -->
+      <div id="str-box" class="dd-oe">
+        <div id="str-dd" class="d-none">
+          <div class="str-ddl">
+            <button class="str-btn" id="intro">Intro</button>
+            <button class="str-btn" id="verse">Verse</button>
+            <button class="str-btn" id="pre-chorus">Pre-chorus</button>
+          </div>
+          <div class="str-ddl">
+            <button class="str-btn" id="bridge">Bridge</button>
+            <button id="chorus">Chorus</button>
+            <button id="interlude">Interlude</button>
+          </div>
+          <div class="str-ddl">
+            <button id="c-part">C-part</button>
+            <button id="solo">Solo</button>
+            <button id="outro">Outro</button>
+          </div>
+        </div>
+        <button id="open-str-dd-btn">Structure</button>  
+      </div>
+    </div>
+    <!-- Modulation and structure End -->
+  </body>
+</html>

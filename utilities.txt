@@ -1,0 +1,45 @@
+⍉
+ø
+v2Note
+dd-oe = dropdown outer element
+
+
+Change keyboard scale setup
+
+find scale keyboard in index.html:
+C Scale Keyboard
+
+V2 chords formula
+1 letter chord = 3 backspace
+2 letters chord = 5 backspace
+3 letters chord = 7 backspace
+4 letters chord =  9 backspace
+5 letters chord =  11 backspace
+
+
+
+--- special notes V2 sequences ----
+
+V2 Am/C = "D/F#" "D" "E" "A" "B"
+
+V2 Bbm/C# = " Eb"," Bb"," C", " F", " Eb/G"   
+
+V2 BM/D = C#  F#  E/Ab  E  B    
+
+V2 Cm/Eb = C  D F G  F/A        
+
+V2 C#m/E = C#  Eb  F# Ab  F#/Bb        
+
+V2 Dm/F = D  E  G  A  G/B        
+
+V2 Ebm/F# = Eb  Ab  Bb  Ab/C  F              
+
+V2 Em/G =  A/C#   F#   E  A  B                 
+
+V2 Fm/Ab = Bb   C  Bb/D  F   G                    
+
+V2 F#m/A =  C#  B/Eb  F#  Ab   B                             
+
+V2 Gm/Bb =  C  D  C/E  G  A                              
+
+V2 G#m/B =  C#  Eb  Ab Bb  C#/F                                  
